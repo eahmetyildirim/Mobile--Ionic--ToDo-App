@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ana Sayfa
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Ara" (ionChange)="search()" [(ngModel)]="searchText" cancel-button-text="Vazgeç" showCancelButton="focus"></ion-searchbar>
+    <ion-button (click)="IsEkle()"  expand="block">İş Ekle</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+
+
+<ion-list>
+  <ion-card (click)="IsDetay(i.key)"   *ngFor="let i of list  ">
+
+    <ion-item>
+
+       <ion-col [size]="3">
+         <ion-card>
+         <ion-label>
+           {{i.getGun()}}
+         </ion-label>
+         <ion-label>
+           {{i.getGunInt()}}
+         </ion-label>
+         <ion-label>
+           {{i.getAy()}}
+         </ion-label>
+
+         </ion-card>
+       </ion-col>
+      <ion-col [size]="9">
+      <ion-label>{{i.getBaslik()}}</ion-label>
+      <ion-text>{{i.getNotlar()}}</ion-text>
+
+      </ion-col>
+    </ion-item>
+ </ion-card>
+</ion-list>
+
+
+
+
+</ion-content>

@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>İş Detayı</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="duzenleB==true">
+  <ion-item>
+    <ion-label position="floating">İş Başlığı</ion-label>
+    <ion-input [(ngModel)]="baslik"  value="{{baslik}}"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Notlar</ion-label>
+    <ion-textarea rows="6" cols="20" [(ngModel)]="notlar" value="{{notlar}}" ></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Tarih</ion-label>
+    <ion-datetime   cancelText="Vazgeç" doneText="Tamamla" [(ngModel)]="tarih" value="{{tarih}}" displayFormat="DD/MM/YYYY" picker-format="DD/MM/YYYY"  min="2021-01-01" max="2030-12-09"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Saat</ion-label>
+    <ion-datetime    cancelText="Vazgeç" doneText="Tamamla" [(ngModel)]="saat"  value="{{saat}}" displayFormat="HH:mm" minuteValues="0,15,30,45"></ion-datetime>
+  </ion-item>
+
+</ion-content>
+
+
+<ion-content *ngIf="duzenleB==false">
+  <ion-card>
+    <ion-card-header>
+
+      <ion-card-title>{{baslik}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{notlar}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-item >
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-label>{{tarih}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      <ion-label>{{saat}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-icon name="alarm-outline" slot="start"></ion-icon>
+      <ion-label *ngIf="alarm">Var</ion-label>
+      <ion-label *ngIf="!alarm">Yok</ion-label>
+
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-button expand="full" *ngIf="!duzenleB" color="primary" (click)="duzenle()">Düzenle</ion-button>
+  <ion-button expand="full" *ngIf="duzenleB" color="primary" (click)="kaydet()">Kaydet</ion-button>
+
+  <ion-button expand="full" (click)="sil()" color="danger">Sil</ion-button>
+
+
+
+</ion-footer>
