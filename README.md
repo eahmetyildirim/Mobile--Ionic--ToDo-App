@@ -1,9 +1,9 @@
 # MobilProg-IonicProject
-Projenin amacı işlerimizi not almaktır. 
+<h1>Projenin amacı işlerimizi not almaktır.</h1>
 Şuanda iş ekleme , eklenen bir işi güncelleme ve silme işlevleri mevcuttur.
 ![Screenshot](Screenshot_38.png)
 Ana sayfa üzerinde yeni bir iş ekleyip eklenen bu işlerin listelenmesi yapılmaktadır. Aynı zamanda işleri filtrelemek için search yeri de bulunmaktadır.
-![Screenshot1](Screenshot_39.png) <br>
+![Screenshot1](Screenshot_39.png) 
 İş Ekle butonuna tıklayınca model mantığı ile iş ekleme sayfası anasayfanın üstünde açılmaktadır. 
 ![Screenshot2](Screenshot_40.png)
 Listelenen işleri görüntülemek için işin üzerine tıklamak yeterli. Yine model mantığı ile anasayfanın üstünde sayfa açılıyor.
